@@ -3,10 +3,6 @@ import Components from "unplugin-vue-components/vite";
 import { VantResolver } from "unplugin-vue-components/resolvers";
 export default defineNuxtConfig({
   devtools: { enabled: false },
-
-  // [保留] 你的全局 CSS
-
-  // [合并] 在 modules 数组中添加新的模块
   modules: [
     "@nuxt/ui",
     "@pinia/nuxt",
@@ -15,7 +11,6 @@ export default defineNuxtConfig({
     "@vite-pwa/nuxt", // 新增: PWA
   ],
 
-  // [新增] 为 i18n 模块提供配置
   i18n: {
     langDir: "./", // 语言文件目录
     locales: [
@@ -34,14 +29,12 @@ export default defineNuxtConfig({
   },
 
   pwa: {
-    registerType: "autoUpdate",
-    workbox: {
-      navigateFallback: "/",
+   workbox: {
+      navigateFallback: '/',
     },
     devOptions: {
       enabled: true,
-      suppressWarnings: true,
-      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',  // 重要：解决 import 报错
     },
     srcDir: "public",
     filename: "sw.ts",
@@ -84,5 +77,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-  routeRules: {},
 });
