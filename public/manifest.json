@@ -1,0 +1,23 @@
+{
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "description": "test pwa ahskjdhakjsdhkjashdkjah",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "Project Test123123",
+  "short_name": "P T",
+  "start_url": "/?from=pwa",
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "xxx",
+      "url": "xxx"
+    }
+  ]
+}

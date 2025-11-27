@@ -1,0 +1,238 @@
+
+*{
+    padding: 0; 
+    margin: 0;
+}
+body{
+    --pageWidth:850px;
+  overflow-x: hidden;
+}
+.pageContainer{
+    max-width: var(--pageWidth);
+    margin: 0 auto;
+    min-height: 100vh;
+}
+.toPointer{
+  cursor: pointer;
+}
+
+ul,
+ol li {
+  list-style: none;
+}
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.text_bold {
+  font-weight: bold;
+}
+
+.text_center {
+  text-align: center;
+  line-height: 100%;
+}
+
+// flex布局
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+//
+.row_center {
+  justify-content: center;
+}
+
+.col_center {
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.flex_col {
+  flex-direction: column;
+}
+.flex1 {
+  flex: 1;
+}
+
+// gird布局
+.girdBox2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.girdBox3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.girdBox4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.girdBox5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+// 页面主容器
+.container {
+  padding: var(--pagePading);
+}
+// grid布局
+.gridBox2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+}
+.gridBox3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+}
+.gridBox4 {
+  display: grid;
+        gap: 10px;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+.gridBox5 {
+  display: grid;
+        gap: 10px;
+
+  grid-template-columns: repeat(5, 1fr);
+}
+.textHiddenOne {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+.textHiddenTwo {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.nodeHeight{
+  height: 5rem;
+}
+.textLeft {
+  text-align: left;
+}
+.textRight {
+  text-align: right;
+}
+
+
+@for $i from 1 to 100 {
+  .mgtb#{$i} {
+    margin-top: #{$i}px;
+    margin-bottom: #{$i}px;
+  }
+  .mglr#{$i} {
+    margin-left: #{$i}px;
+    margin-right: #{$i}px;
+  }
+
+  .pdtb#{$i} {
+    padding-top: #{$i}px;
+    padding-bottom: #{$i}px;
+  }
+
+  .pdlr#{$i} {
+    padding-left: #{$i}px;
+    padding-right: #{$i}px;
+  }
+
+  .mt#{$i} {
+    margin-top: #{$i}px;
+  }
+
+  .pt#{$i} {
+    padding-top: #{$i}px;
+  }
+
+  .ml#{$i} {
+    margin-left: #{$i}px;
+  }
+
+  .pl#{$i} {
+    padding-left: #{$i}px;
+  }
+
+  .mb#{$i} {
+    margin-bottom: #{$i}px;
+  }
+
+  .pb#{$i} {
+    padding-bottom: #{$i}px;
+  }
+
+  .mr#{$i} {
+    margin-right: #{$i}px;
+  }
+
+  .pr#{$i} {
+    padding-right: #{$i}px;
+  }
+
+  // 具体宽度
+  .ww-#{$i} {
+    width: #{$i}#{"px"};
+  }
+
+  .hh-#{$i} {
+    height: #{$i}#{"px"};
+  }
+ 
+
+  .f#{$i} {
+    font-size: #{$i}px;
+  }
+ 
+}
+
+.fixedBotBtn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: var(--pageWidth);
+}
+
+// ::-webkit-scrollbar{
+//   display: none;
+// }
+

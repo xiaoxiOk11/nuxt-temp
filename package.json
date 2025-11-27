@@ -1,0 +1,48 @@
+{
+  "name": "nuxt-demo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "translate": "translate"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^4.1.0",
+    "@pinia/nuxt": "^0.11.2",
+    "@vite-pwa/nuxt": "^1.0.7",
+    "axios": "^1.13.2",
+    "daisyui": "^5.5.5",
+    "dayjs": "^1.11.19",
+    "gsap": "^3.13.0",
+    "klinecharts": "^10.0.0-alpha5",
+    "language-translate": "^2.2.5",
+    "nuxt": "^4.2.0",
+    "pinia": "^3.0.3",
+    "qrcode.vue": "^3.6.0",
+    "socket.io-client": "^4.8.1",
+    "vant": "^4.9.21",
+    "vue": "^3.5.22",
+    "vue-clipboard3": "^2.0.0",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@iconify/vue": "^5.0.0",
+    "@nuxtjs/i18n": "^10.2.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.17",
+    "@tsparticles/vue3": "^3.0.1",
+    "less": "^4.4.2",
+    "pinia-plugin-persistedstate": "^4.7.1",
+    "sass-embedded": "^1.93.3",
+    "tailwindcss": "^4.1.17",
+    "tsparticles": "^3.9.1",
+    "tsparticles-slim": "^2.12.0",
+    "unplugin-vue-components": "^30.0.0"
+  }
+}
