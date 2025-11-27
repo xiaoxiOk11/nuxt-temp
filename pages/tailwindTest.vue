@@ -1,6 +1,22 @@
 <template>
-    <div>
-        <UCarousel v-slot="{ item }" :items="items" class="w-full max-w-xs mx-auto">
+    <div class="text-slate-900">
+        <div class="mb-5 ">
+            <USelectMenu v-model="value" :items="selectList" class="w-48" />
+        </div>
+     
+        <div class="mt-5">
+            <UFormField label="Email" error="Please enter a valid email address.">
+                <UInput placeholder="Enter your email" class="w-full" />
+            </UFormField>
+            <div class="text-cyan-900 mt-10">
+                {{ masjVal }}
+            </div>
+            <div class="flex items-center gap-2">
+                <UInput v-model="masjVal" v-maska="'##/##'" placeholder="4242 4242 4242 4242"
+                    icon="i-lucide-credit-card" />
+            </div>
+        </div>
+        <UCarousel v-slot="{ item }" :items="bannerList" class="w-full max-w-xs mx-auto">
             <img :src="item" width="320" height="320" class="rounded-lg">
         </UCarousel>
         <div>div with tailwindcss styles</div>
@@ -9,8 +25,26 @@
         </button>
         <UButton>UI Button</UButton>
         <UIcon name="i-lucide-lightbulb" class="size-5" />
-        <UAlert title="Heads up! pt-5" />
-        <UAvatarGroup>
+        <div class="my-10">
+            <UAlert title="Heads up! " />
+
+        </div>
+        <div class="grid grid-cols-4 gap-4 gap-10">
+            <div class="bg-cyan-800 text-lg text-amber-200 p-2 ">01</div>
+            <div>02</div>
+
+            <div class="font-bold text-lg">03</div>
+            <div class="touch-pan-x">04</div>
+
+            <!-- ... -->
+            <div class="cursor-pointer">09</div>
+        </div>
+        <div class="my-5">
+            <figure class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://img.daisyui.com/images/stock/daisyui-hat-4.webp" />
+            </figure>
+        </div>
+        <UAvatarGroup class="mt-10">
             <UAvatar src="https://github.com/benjamincanac.png" alt="Benjamin Canac" />
             <UAvatar src="https://github.com/romhml.png" alt="Romain Hamel" />
             <UAvatar src="https://github.com/noook.png" alt="Neil Richter" />
@@ -37,7 +71,32 @@
 
 
 <script setup lang="ts">
-const items = [
+import { vMaska } from 'maska/vue'
+import type { SelectMenuItem } from '@nuxt/ui'
+const masjVal = ref("")
+const maskOptions = {
+    mask: '#### #### #### ####',
+    eager: true  // 输入时立即格式化
+}
+const value = ref({
+    label: 'Todo'
+})
+const selectList = ref([
+    {
+        label: 'Backlog'
+    },
+    {
+        label: 'Todo'
+    },
+    {
+        label: 'In Progress'
+    },
+    {
+        label: 'Done'
+    }
+])
+
+const bannerList = [
     'https://picsum.photos/640/640?random=1',
     'https://picsum.photos/640/640?random=2',
     'https://picsum.photos/640/640?random=3',

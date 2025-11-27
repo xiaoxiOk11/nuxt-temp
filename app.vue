@@ -18,17 +18,7 @@ import gsap from "gsap";
 import { getWebSite } from "~/api/home/home";
 const usePublicStore = publicStore();
 
-// --- 1. 保留你现有的主题切换逻辑 ---
-const useThemeRoute = themeRoute();
-watch(
-  () => useThemeRoute.fileRoute,
-  (newRoute) => {
-    if (newRoute) {
-      import(`~/assets/css/${newRoute}/main.scss`);
-    }
-  },
-  { immediate: true }
-);
+
 // start  页面切换 动画。待修复tabbar显示问题
 const animations = [
   {
