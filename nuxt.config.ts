@@ -10,7 +10,11 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n", // 新增: i18n
     "@vite-pwa/nuxt", // 新增: PWA
   ],
-
+  ui: {
+    global: true,
+    primary: 'emerald',
+    gray: 'cool'
+  } as any,   // 加这句直接干掉 TS 报错（官方都这么干）
   i18n: {
     langDir: "./", // 语言文件目录
     locales: [
@@ -27,7 +31,7 @@ export default defineNuxtConfig({
   devServer: {
     host: "127.0.0.1",
   },
-
+  
   pwa: {
    workbox: {
       navigateFallback: '/',
@@ -50,7 +54,7 @@ export default defineNuxtConfig({
       }),
     ],
   },
-  css: ["~/assets/css/public.scss"],
+  css: ["~/assets/css/main.css","~/assets/css/public.less"],
 
   nitro: {
     externals: {
@@ -60,6 +64,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: true, // 或者 pageTransition: {}
     layoutTransition: true, // 同理
+    
     head: {
       htmlAttrs: {
         lang: "en",

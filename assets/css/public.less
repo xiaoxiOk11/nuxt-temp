@@ -1,0 +1,197 @@
+/* ================ 全局变量（统一管理，一改全改） ================ */
+:root {
+  --pageWidth: 850px;
+  --pagePading: 16px;
+
+  // 主色调（你随时可以换成别的配色）
+  --mainColor: #623cbf;
+  --btnColor: var(--mainColor);
+  --greenTextColor: #1ce89f;
+  --colorUp: #1ee186;
+  --colorDown: #ff6565;
+  --colorUp2: #3db89a;
+  --colorDown2: #ce4040;
+
+  // 背景色
+  --bodyBgColor: #130040;
+  --secondBoxBg: #f6f3fc;
+  --thirdBoxBg: #fff;
+
+  // 文字色
+  --textMain: #fff;
+  --textSecond: #999;
+  --textThird: #666;
+  --textDark: #130040;
+}
+
+/* ================ 基础重置（只动最安全的） ================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--textMain);
+  background: var(--bodyBgColor);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ================ 常用文本颜色类 ================ */
+.greenText   { color: var(--greenTextColor); }
+.mainText    { color: var(--mainColor); }
+.colorUp     { color: var(--colorUp); }
+.colorDown   { color: var(--colorDown); }
+.colorUp2    { color: var(--colorUp2); }
+.colorDown2  { color: var(--colorDown2); }
+.color999    { color: #999; }
+.color666    { color: #666; }
+.colorfff    { color: #fff; }
+.color000    { color: #000; }
+
+/* ================ 页面主容器 ================ */
+.pageContainer {
+  max-width: var(--pageWidth);
+  margin: 0 auto;
+  padding: 0 var(--pagePading);
+  min-height: 100vh;
+}
+
+/* ================ 通用卡片组件（你原来的 pageBoxEl） ================ */
+.pageBoxEl {
+  background: var(--secondBoxBg);
+  border-radius: 15px;
+  padding: 16px;
+  overflow: hidden;
+
+  .boxContentEl {
+    background: var(--thirdBoxBg);
+    border-radius: 12px;
+    padding: 16px;
+    color: #000;
+
+    .c_title {
+      color: var(--textDark);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+/* ================ 底部固定按钮（最常用） ================ */
+.fixedBotBtn {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--pageWidth);
+  background: #0d081a;
+  padding: 15px var(--pagePading) 20px;
+  z-index: 999;
+
+  .gridBox2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    place-items: center;
+
+    div {
+      height: 44px;
+      line-height: 44px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .buyBtn  { background: var(--colorUp2);  color: #fff; }
+    .sellBtn { background: var(--colorDown2); color: #fff; }
+  }
+}
+
+/* ================ 交易记录项 ================ */
+.recordPage {
+  .recordItem {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--textDark);
+
+    .between div:nth-child(1) {
+      color: var(--textThird);
+    }
+  }
+
+  .colorUp   { color: var(--colorUp2); }
+  .colorDown { color: var(--colorDown2); }
+}
+
+/* ================ 输入框美化（完美替代你原来的 inpBoxEl） ================ */
+.inpBoxEl {
+  height: 50px;
+  border: 1px solid #11473f;
+  border-radius: 12px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+
+  input {
+    flex: 1;
+    height: 100%;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+
+    &::placeholder {
+      color: #666;
+    }
+  }
+
+  .leftBox {
+    flex: 1;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+}
+
+/* ================ 空状态图 ================ */
+.nullData {
+  height: 200px;
+  background: url("~/assets/images/01/img/nullData.png") no-repeat center / 100px 100px;
+}
+
+/* ================ 其他小组件 ================ */
+.contentBtn {
+  background: var(--mainColor);
+  color: #fff;
+  text-align: center;
+  border-radius: 12px;
+  height: 44px;
+  line-height: 44px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:active { opacity: 0.8; }
+}
+
+.cancelBtn {
+  background: #cad0db;
+  color: #fff;
+  border-radius: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  transition: background 0.3s;
+
+  &:active { background: #666; }
+}

@@ -11,7 +11,7 @@
     "translate": "translate"
   },
   "dependencies": {
-    "@nuxt/ui": "^4.1.0",
+    "@nuxt/ui": "^4.2.1",
     "@pinia/nuxt": "^0.11.2",
     "@vite-pwa/nuxt": "^1.0.7",
     "axios": "^1.13.2",
@@ -25,12 +25,15 @@
     "pinia": "^3.0.3",
     "qrcode.vue": "^3.6.0",
     "socket.io-client": "^4.8.1",
+    "tailwindcss": "^4.1.17",
+    "valibot": "^1.2.0",
     "vant": "^4.9.21",
     "vue": "^3.5.22",
     "vue-clipboard3": "^2.0.0",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.76",
     "@iconify/vue": "^5.0.0",
     "@nuxtjs/i18n": "^10.2.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",

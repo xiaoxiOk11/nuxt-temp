@@ -2,7 +2,10 @@
 <template>
   <div>
     <!-- NuxtPage 现在会使用我们动态生成的 pageTransition 对象 -->
-    <NuxtPage class="pageContainer" :transition="pageTransition" />
+    <UApp>
+      <NuxtPage class="pageContainer" :transition="pageTransition" />
+
+    </UApp>
     <van-backTop></van-backTop>
   </div>
 </template>
@@ -118,6 +121,7 @@ onMounted(() => {
 html.page-leave-active {
   overflow: hidden;
 }
+
 .van-popup {
   background: #000 !important;
 }
