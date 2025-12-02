@@ -1,10 +1,7 @@
 <!-- pages/index.vue -->
 <template>
   <section>
-    <ClientOnly>
-      <!-- 动态组件 -->
-      <component :is="currentThemeComponent"></component>
-    </ClientOnly>
+    Lokks
   </section>
 </template>
 

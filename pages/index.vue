@@ -25,7 +25,7 @@
         </van-swipe-item>
       </van-swipe>
     </div>
-
+    {{ counter }}
 
   </section>
 </template>
@@ -41,9 +41,10 @@ const showToastHandle = (message) => {
   showToast('Hello World');
   console.log('111', 111);
 };
-
+const counter =ref(0)
 const showAlert = () => {
-  alert("123")
+  // alert("123")
+  counter.value++;
 }
 </script>
 
