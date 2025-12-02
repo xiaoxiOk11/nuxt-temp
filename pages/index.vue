@@ -1,6 +1,6 @@
 <template>
   <section>
-   
+
     <div>
       <van-button @click="showToastHandle('Hello world')">
         hello world
@@ -15,7 +15,15 @@
 
       <van-card num="2" price="2.00" desc="描述信息" title="商品标题"
         thumb="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg" />
-
+        <div>
+          hajksdhkjsh
+        </div>
+        <van-button type="primary" @click="showAlert">hahah</van-button>
+      <van-swipe :autoplay="3000" lazy-render>
+        <van-swipe-item v-for="image in images" :key="image">
+          <img :src="image" />
+        </van-swipe-item>
+      </van-swipe>
     </div>
 
 
@@ -23,27 +31,20 @@
 </template>
 
 <script setup>
-import { themeRoute } from '~/stores/theme'
-const useThemeRoute = themeRoute();
 
-const currentThemeComponent = computed(() => {
-  if (!useThemeRoute.fileRoute) return null;
-  return defineAsyncComponent(() => import(`~/pageRoute/${useThemeRoute.fileRoute}/index.vue`))
-});
-
-const changeTheme = () => {
-  if (useThemeRoute.fileRoute === '01') {
-    useThemeRoute.fileRoute = '02';
-  } else {
-    useThemeRoute.fileRoute = '01';
-  }
-}
+const images = [
+  'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+  'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+];
 import { showToast } from 'vant';
 const showToastHandle = (message) => {
-  // console.log('showToast', showToast);
   showToast('Hello World');
   console.log('111', 111);
 };
+
+const showAlert = () => {
+  alert("123")
+}
 </script>
 
 
