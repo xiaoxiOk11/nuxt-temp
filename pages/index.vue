@@ -15,10 +15,10 @@
 
       <van-card num="2" price="2.00" desc="描述信息" title="商品标题"
         thumb="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg" />
-        <div>
-          hajksdhkjsh
-        </div>
-        <van-button type="primary" @click="showAlert">hahah</van-button>
+      <div>
+        hajksdhkjsh
+      </div>
+      <van-button type="primary" @click="showAlert">hahah</van-button>
       <van-swipe :autoplay="3000" lazy-render>
         <van-swipe-item v-for="image in images" :key="image">
           <img :src="image" />
@@ -26,12 +26,14 @@
       </van-swipe>
     </div>
     {{ counter }}
-
+    <h1 @click="clickHandle">IXox</h1>
   </section>
 </template>
 
 <script setup>
-
+const clickHandle = () => {
+  counter.value = 100
+}
 const images = [
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
